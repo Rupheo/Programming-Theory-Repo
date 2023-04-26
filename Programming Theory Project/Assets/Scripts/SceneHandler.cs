@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    [SerializeField] int LoadSceneIndex;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            Debug.Log("Load Next Scene");
+		{
+            LoadScene(LoadSceneIndex);
+		}
     }
+
+    private void LoadScene(int sceneId)
+	{
+        //SceneManager.LoadSceneAsync(sceneId);
+        SceneManager.LoadScene(sceneId);
+	}
 }
