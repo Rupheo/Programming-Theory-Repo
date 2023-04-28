@@ -17,7 +17,7 @@ public class SceneHandler : MonoBehaviour
 
     private void LoadScene(int sceneId)
 	{
-        //SceneManager.LoadSceneAsync(sceneId);
-        SceneManager.LoadScene(sceneId);
+        SceneManager.LoadSceneAsync(sceneId); //this bitch is the winner!**
+        //SceneManager.LoadScene(sceneId);
 	}
 }
