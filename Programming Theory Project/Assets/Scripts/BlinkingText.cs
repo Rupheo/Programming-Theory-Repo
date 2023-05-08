@@ -8,6 +8,7 @@ public class BlinkingText : MonoBehaviour
 
 	private void Start()
 	{
+		//ABSTRACTION
 		StartCoroutine(nameof(StartTextBlink));
 	}
 

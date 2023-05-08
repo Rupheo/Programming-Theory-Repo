@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//INHERITANCE (Parent)
+
 public abstract class Item : MonoBehaviour
 {
 	[SerializeField] string itemName;
@@ -12,12 +14,14 @@ public abstract class Item : MonoBehaviour
 
 	public virtual void Description() { }
 
-	public string GetItemName
+	// ENCAPSULATION
+	public string GetName
 	{
 		get { return itemName; }
 	}
 
-	public string GetItemValue
+	// ENCAPSULATION
+	public string GetValue
 	{
 		get { return value.ToString() + "G"; }
 	}

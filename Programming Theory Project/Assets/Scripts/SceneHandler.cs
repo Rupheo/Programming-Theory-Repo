@@ -13,6 +13,7 @@ public class SceneHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !isBusy)
 		{
             isBusy = true;
+            //ABSTRACTION
             LoadScene(LoadSceneIndex);
 		}
     }

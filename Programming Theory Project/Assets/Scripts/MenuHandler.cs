@@ -24,6 +24,7 @@ public class MenuHandler : MonoBehaviour
 
     void Start()
     {
+        //ABSTRACTION
         SetupItemTexts(); 
         UpdateSelectionAction(currentSelection);
     }
@@ -32,16 +33,19 @@ public class MenuHandler : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && !isBusy)
 		{
+            //ABSTRACTION
             HandleSelectionAction();
 		}
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) && !isBusy)
         {
+            //ABSTRACTION
             HandleSelectionAction();
         }
 
         //Quit Game
         if (Input.GetKeyDown(KeyCode.Q) && !isBusy)
 		{
+            //ABSTRACTION
             QuitGame();
 		}
     }
@@ -52,6 +56,7 @@ public class MenuHandler : MonoBehaviour
 
         currentSelection++;
         currentSelection %= 2;
+        //ABSTRACTION
         UpdateSelectionAction(currentSelection);         
 
         isBusy = false;
@@ -61,14 +66,20 @@ public class MenuHandler : MonoBehaviour
 	{
         if (currentSelection == 0)
         {
+            //ABSTRACTION
             EnabledBullet(bulletOne, true);
+            //ABSTRACTION
             EnabledBullet(bulletTwo, false);
+            //ABSTRACTION
             weapon.Description();
         }
         else if (currentSelection == 1)
 		{
+            //ABSTRACTION
             EnabledBullet(bulletOne, false);
+            //ABSTRACTION
             EnabledBullet(bulletTwo, true);
+            //ABSTRACTION
             armor.Description();
         }
 	}
@@ -80,10 +91,10 @@ public class MenuHandler : MonoBehaviour
 
     private void SetupItemTexts()
 	{
-        armorNameText.text = armor.GetItemName;
-        armorValueText.text = armor.GetItemValue;
-        weaponNameText.text = weapon.GetItemName;
-        weaponValueText.text = weapon.GetItemValue;
+        armorNameText.text = armor.GetName;
+        armorValueText.text = armor.GetValue;
+        weaponNameText.text = weapon.GetName;
+        weaponValueText.text = weapon.GetValue;
 	}
 
     private void QuitGame()
