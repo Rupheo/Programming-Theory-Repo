@@ -6,18 +6,19 @@ using UnityEngine.SceneManagement;
 public class SceneHandler : MonoBehaviour
 {
     [SerializeField] int LoadSceneIndex;
+    private bool isBusy;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isBusy)
 		{
+            isBusy = true;
             LoadScene(LoadSceneIndex);
 		}
     }
 
     private void LoadScene(int sceneId)
 	{
-        SceneManager.LoadSceneAsync(sceneId); //this bitch is the winner!**
-        //SceneManager.LoadScene(sceneId);
+        SceneManager.LoadSceneAsync(sceneId);
 	}
 }
